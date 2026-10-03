@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>I Love You Ashleen ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+}
+
+body{
+    overflow:hidden;
+    font-family:Poppins,sans-serif;
+    color:white;
+    background:
+    radial-gradient(circle at 50% 15%,#64172f,#270914 42%,#080208 100%);
+}
+
+body:before,
+body:after{
+    content:"";
+    position:fixed;
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    filter:blur(75px);
+    opacity:.3;
+    pointer-events:none;
+}
+
+body:before{
+    background:#ff176f;
+    top:-80px;
+    left:-80px;
+}
+
+body:after{
+    background:#ff003c;
+    right:-80px;
+    bottom:-80px;
+}
+
+.page{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:12px;
+    opacity:0;
+    pointer-events:none;
+    transform:scale(.96);
+    transition:.55s ease;
+}
+
+.page.active{
+    opacity:1;
+    pointer-events:auto;
+    transform:scale(1);
+}
+
+.card{
+    width:100%;
+    max-width:390px;
+    max-height:94vh;
+    overflow:hidden;
+
+    padding:20px 18px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.075);
+    border:1px solid rgba(255,145,180,.35);
+    border-radius:25px;
+
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+
+    box-shadow:
+    0 0 35px rgba(255,0,92,.18),
+    inset 0 0 20px rgba(255,255,255,.025);
+}
+
+/* MUSIC */
+
+.music-btn{
+    padding:8px 17px;
+    margin-bottom:10px;
+
+    border:1px solid rgba(255,150,185,.45);
+    border-radius:30px;
+
+    background:rgba(255,70,120,.12);
+    color:#ffd5e2;
+
+    font-family:Poppins,sans-serif;
+    font-size:11px;
+    font-weight:600;
+
+    cursor:pointer;
+}
+
+/* HEART */
+
+.big-heart{
+    font-size:48px;
+    margin-bottom:3px;
+    filter:drop-shadow(0 0 14px #ff397d);
+    animation:beat 1.5s infinite;
+}
+
+@keyframes beat{
+    50%{transform:scale(1.12)}
+}
+
+/* TEXT */
+
+.subtitle{
+    font-size:9px;
+    letter-spacing:2.5px;
+    color:#ffb8cf;
+    margin-bottom:8px;
+}
+
+.title{
+    font-family:"Great Vibes",cursive;
+    font-size:39px;
+    line-height:.98;
+    color:#ffb0ca;
+    text-shadow:
+    0 0 8px #ff467e,
+    0 0 18px rgba(255,35,100,.6);
+    margin-bottom:12px;
+}
+
+.message{
+    color:#ffe5ed;
+    font-size:11.5px;
+    line-height:1.55;
+    font-weight:300;
+}
+
+.highlight{
+    color:#ff9fbd;
+    font-weight:600;
+}
+
+/* BUTTON */
+
+.love-btn{
+    margin-top:15px;
+    padding:10px 20px;
+
+    border:none;
+    border-radius:30px;
+
+    color:white;
+    font-family:Poppins,sans-serif;
+    font-size:11px;
+    font-weight:600;
+
+    background:linear-gradient(
+        135deg,
+        #ff245f,
+        #ff4f91,
+        #d9004d
+    );
+
+    box-shadow:
+    0 0 12px rgba(255,30,100,.5),
+    0 0 25px rgba(255,30,100,.2);
+
+    cursor:pointer;
+}
+
+/* PAGE 2 */
+
+.heart-title{
+    font-family:"Great Vibes",cursive;
+    font-size:42px;
+    color:#ffabc7;
+    text-shadow:0 0 15px #ff397d;
+    margin-bottom:10px;
+}
+
+.shayari{
+    color:#ffe7ef;
+    font-size:11.5px;
+    line-height:1.7;
+    font-weight:300;
+}
+
+.shayari span{
+    color:#ff9cbd;
+}
+
+.signature{
+    margin-top:13px;
+    font-family:"Great Vibes",cursive;
+    font-size:23px;
+    color:#ffabc7;
+}
+
+.back{
+    margin-top:13px;
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,130,170,.35);
+    box-shadow:none;
+}
+
+/* FLOATING HEARTS */
+
+.heart{
+    position:fixed;
+    bottom:-30px;
+    pointer-events:none;
+    animation:floatUp linear forwards;
+    z-index:0;
+}
+
+@keyframes floatUp{
+    0%{
+        transform:translateY(0) scale(.7);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.8;
+    }
+
+    100%{
+        transform:translateY(-110vh) scale(1.1) rotate(20deg);
+        opacity:0;
+    }
+}
+
+/* VERY SMALL PHONES */
+
+@media(max-height:650px){
+
+    .card{
+        padding:15px 16px;
+    }
+
+    .big-heart{
+        font-size:40px;
+    }
+
+    .title{
+        font-size:34px;
+        margin-bottom:8px;
+    }
+
+    .message{
+        font-size:10.5px;
+        line-height:1.4;
+    }
+
+    .love-btn{
+        margin-top:10px;
+        padding:8px 17px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<audio id="music" src="song.mp3" loop></audio>
+
+
+<!-- PAGE 1 -->
+
+<section class="page active" id="page1">
+
+<div class="card">
+
+<button class="music-btn" onclick="toggleMusic()">
+🎵 MUSIC: OFF
+</button>
+
+<div class="big-heart">❤️</div>
+
+<div class="subtitle">
+A LITTLE MESSAGE FROM MY HEART
+</div>
+
+<h1 class="title">
+I Love You<br>
+Ashleen 🎀
+</h1>
+
+<p class="message">
+
+Kabhi kabhi kisi ek insaan ki presence hi
+life ko thoda aur beautiful bana deti hai.
+<br>
+
+Aur mere liye woh person
+<span class="highlight">tum ho, Ashleen.</span> ❤️
+<br>
+
+Shayad main har feeling ko perfect words mein
+explain na kar paun, lekin ek baat sach hai —
+tum mere liye genuinely
+<span class="highlight">special</span> ho.
+<br>
+
+Is chhoti si website mein bas wahi feelings
+chhupa di hain jo words mein kehna
+thoda mushkil hai. 🎀
+
+</p>
+
+<button class="love-btn" onclick="nextPage()">
+VIEW MY HEART ❤️
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PAGE 2 -->
+
+<section class="page" id="page2">
+
+<div class="card">
+
+<div class="big-heart">💗</div>
+
+<h2 class="heart-title">
+For Ashleen
+</h2>
+
+<p class="shayari">
+
+Teri smile ka koi comparison nahi,
+<br>
+Teri presence se khoobsurat koi moment nahi. ❤️
+<br><br>
+
+<span>
+Tera naam aaye toh dil khud muskura deta hai,
+</span>
+<br>
+Aur tera khayal aaye toh waqt bhi tham sa jaata hai.
+<br><br>
+
+Kuch log kahani ban jaate hain,
+<br>
+Kuch log yaad ban jaate hain,
+<br>
+Aur kuch log...
+<br>
+<span>
+Dil ke bahut kareeb ban jaate hain. 💗
+</span>
+<br><br>
+
+Ashleen,
+<br>
+tum unhi khaas logon mein se ek ho. 🌹
+
+</p>
+
+<div class="signature">
+— From someone who cares ❤️
+</div>
+
+<button class="love-btn back" onclick="previousPage()">
+← BACK
+</button>
+
+</div>
+
+</section>
+
+
+<script>
+
+const music=document.getElementById("music");
+const musicBtn=document.querySelector(".music-btn");
+
+function toggleMusic(){
+
+    if(music.paused){
+
+        music.play().then(()=>{
+            musicBtn.innerHTML="🎵 MUSIC: ON";
+        }).catch(()=>{
+            musicBtn.innerHTML="🎵 TAP AGAIN";
+        });
+
+    }else{
+
+        music.pause();
+        musicBtn.innerHTML="🎵 MUSIC: OFF";
+
+    }
+}
+
+function nextPage(){
+
+    document.getElementById("page1")
+    .classList.remove("active");
+
+    document.getElementById("page2")
+    .classList.add("active");
+}
+
+function previousPage(){
+
+    document.getElementById("page2")
+    .classList.remove("active");
+
+    document.getElementById("page1")
+    .classList.add("active");
+}
+
+
+/* FLOATING HEARTS */
+
+const hearts=["❤️","💗","💖","💕","💓","🌹","🎀"];
+
+function createHeart(){
+
+    const h=document.createElement("div");
+
+    h.className="heart";
+
+    h.innerText=
+    hearts[Math.floor(Math.random()*hearts.length)];
+
+    h.style.left=Math.random()*100+"vw";
+
+    h.style.fontSize=
+    (12+Math.random()*14)+"px";
+
+    h.style.animationDuration=
+    (5+Math.random()*4)+"s";
+
+    document.body.appendChild(h);
+
+    setTimeout(()=>{
+        h.remove();
+    },9000);
+}
+
+setInterval(createHeart,800);
+
+for(let i=0;i<6;i++){
+    setTimeout(createHeart,i*400);
+}
+
+</script>
+
+</body>
+</html>
